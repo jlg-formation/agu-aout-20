@@ -1,5 +1,3 @@
-console.log("starting server");
-
 const express = require("express");
 const serveIndex = require("serve-index");
 
@@ -12,3 +10,4 @@ app.use(serveIndex(".", { icons: true }));
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
 });
+console.log("starting server");
