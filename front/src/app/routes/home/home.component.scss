@@ -1,3 +1,8 @@
+:host {
+  display: flex;
+  align-items: center;
+}
+
 main {
   flex-grow: 1;
   justify-content: center;
