@@ -53,3 +53,22 @@ button {
     }
   }
 }
+
+form {
+  display: flex;
+  flex-flow: column;
+  max-width: 25em;
+
+  label {
+    padding-bottom: 0.5em;
+  }
+
+  input {
+    padding: 0.5em 1em;
+    border: 0.1em solid #bbb;
+  }
+
+  button {
+    margin-top: 2em;
+  }
+}
