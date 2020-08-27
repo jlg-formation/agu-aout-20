@@ -34,4 +34,8 @@ export class ArticleService {
     this.articles = this.articles.filter((a) => !selectedArticles.includes(a));
     this.save();
   }
+
+  refresh(): void {
+    this.articles = this.getArticles();
+  }
 }
