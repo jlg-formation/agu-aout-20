@@ -1,6 +1,6 @@
 <main>
   <h1>Ajout d'un article</h1>
-  <form [formGroup]="f">
+  <form [formGroup]="f" (ngSubmit)="submit()">
     <label>
       <div>Nom</div>
       <input type="text" formControlName="name" />
@@ -13,7 +13,7 @@
       <div>Quantité</div>
       <input type="number" min="0" step="1" formControlName="qty" />
     </label>
-    <button class="primary">Ajouter</button>
+    <button [disabled]="f.invalid" class="primary">Ajouter</button>
   </form>
 
   <!-- {{ f.value | json }} -->
