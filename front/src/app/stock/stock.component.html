@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of articles">
+        <tr *ngFor="let a of articleService.articles">
           <td>{{ a.name }}</td>
           <td>{{ a.price }}</td>
           <td>{{ a.qty }}</td>
