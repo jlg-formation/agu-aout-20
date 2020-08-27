@@ -6,7 +6,7 @@
       <button routerLink="create" title="Ajouter">
         <fa-icon [icon]="faPlus"></fa-icon>
       </button>
-      <button title="Supprimer">
+      <button (click)="remove()" title="Supprimer" *ngIf="selectedArticles.length > 0">
         <fa-icon [icon]="faTrashAlt"></fa-icon>
       </button>
     </nav>
@@ -22,7 +22,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of articleService.articles" (click)="toggle(a)" >
+        <tr
+          *ngFor="let a of articleService.articles"
+          (click)="toggle(a)"
+          [class.selected]="selectedArticles.includes(a)"
+        >
           <td>{{ a.name }}</td>
           <td>{{ a.price }}</td>
           <td>{{ a.qty }}</td>
