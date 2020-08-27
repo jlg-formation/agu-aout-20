@@ -1,0 +1,24 @@
+nav {
+  button {
+    margin-right: 0.5em;
+  }
+  padding-bottom: 0.5em;
+}
+
+table {
+  border: 0.1em solid #bbb;
+  border-collapse: collapse;
+  td,
+  th {
+    padding: 0.5em 1em;
+  }
+  thead {
+    background: #bbb;
+  }
+
+  tbody {
+    tr:nth-child(even) {
+      background: #eee;
+    }
+  }
+}
