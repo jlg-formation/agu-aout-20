@@ -3,7 +3,9 @@
   <div class="content">
     <nav>
       <button title="Rafraichir"><fa-icon [icon]="faRedoAlt"></fa-icon></button>
-      <button routerLink="create" title="Ajouter"><fa-icon [icon]="faPlus"></fa-icon></button>
+      <button routerLink="create" title="Ajouter">
+        <fa-icon [icon]="faPlus"></fa-icon>
+      </button>
     </nav>
     <table>
       <caption hidden>
@@ -17,30 +19,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Tournevis</td>
-          <td>2.50</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Tournevis</td>
-          <td>2.50</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Tournevis</td>
-          <td>2.50</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Tournevis</td>
-          <td>2.50</td>
-          <td>120</td>
-        </tr>
-        <tr>
-          <td>Tournevis</td>
-          <td>2.50</td>
-          <td>120</td>
+        <tr *ngFor="let a of articles">
+          <td>{{ a.name }}</td>
+          <td>{{ a.price }}</td>
+          <td>{{ a.qty }}</td>
         </tr>
       </tbody>
     </table>
