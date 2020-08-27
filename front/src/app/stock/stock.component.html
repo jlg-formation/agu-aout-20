@@ -22,7 +22,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let a of articleService.articles">
+        <tr *ngFor="let a of articleService.articles" (click)="toggle(a)" >
           <td>{{ a.name }}</td>
           <td>{{ a.price }}</td>
           <td>{{ a.qty }}</td>
