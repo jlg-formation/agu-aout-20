@@ -27,7 +27,7 @@
           (click)="toggle(a)"
           [class.selected]="selectedArticles.includes(a)"
         >
-          <td>{{ a.name }}</td>
+          <td [title]="a.name">{{ a.name | ellipsis : 15 }}</td>
           <td>{{ a.price }}</td>
           <td>{{ a.qty }}</td>
         </tr>
