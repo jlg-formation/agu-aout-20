@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StockComponent } from './stock.component';
+import { WidgetModule } from '../widget/widget.module';
 
 describe('StockComponent', () => {
   let component: StockComponent;
@@ -8,6 +9,7 @@ describe('StockComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [WidgetModule],
       declarations: [ StockComponent ]
     })
     .compileComponents();
