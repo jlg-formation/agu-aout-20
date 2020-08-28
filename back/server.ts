@@ -8,6 +8,17 @@ const www = "../front/dist/front";
 
 app.use(cors());
 
+const articles = [
+  { name: 'Tournevis', price: 2.44, qty: 140 },
+  { name: 'Tournevis cruciforme', price: 2.78, qty: 110 },
+  { name: 'Marteau', price: 1.2, qty: 25 },
+  { name: 'Pince', price: 4.21, qty: 13 },
+];
+
+app.get('/ws/articles', (req, res) => {
+  res.json(articles);
+});
+
 app.use(express.static(www));
 app.use(serveIndex(www, { icons: true }));
 
