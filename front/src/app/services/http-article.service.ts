@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ArticleService } from './article.service';
 import { Article } from '../interfaces/article';
 
@@ -35,6 +35,28 @@ export class HttpArticleService extends ArticleService {
     this.http.post<void>(url, a).subscribe({
       next: () => {
         console.log('post ok');
+        this.refresh();
+      },
+      error: (err) => {
+        console.log('err: ', err);
+      },
+      complete: () => {
+        console.log('complete');
+      },
+    });
+  }
+
+  remove(selectedArticles: Article[]): void {
+    super.remove(selectedArticles);
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body: selectedArticles.map((a) => a.id),
+    };
+    this.http.delete<void>(url, options).subscribe({
+      next: () => {
+        console.log('delete ok');
         this.refresh();
       },
       error: (err) => {
