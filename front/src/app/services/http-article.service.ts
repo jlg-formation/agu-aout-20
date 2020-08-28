@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ArticleService } from './article.service';
 import { Article } from '../interfaces/article';
 
-export const url = 'http://localhost:3000/ws/articles';
+export const url = '/ws/articles';
 
 @Injectable({
   providedIn: 'root',
